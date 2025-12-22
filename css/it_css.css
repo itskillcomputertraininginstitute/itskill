@@ -1,0 +1,136 @@
+ /* ====== Color & Typography (Branding) ====== */
+    :root{
+      --primary:#0052CC;
+      --dark:#002B5B;
+      --accent:#2E9EFF;
+      --muted:#F4F6F9;
+      --text:#333333;
+      --radius:10px;
+      --container:1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background:linear-gradient(180deg,var(--muted),#fff 40%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    a{color:inherit; text-decoration:none;}
+    .contact{
+      margin: 20px;
+    }
+    img{max-width:100%; display:block}
+
+    /* ====== Layout ====== */
+    .wrap{max-width:var(--container); margin:0 auto; padding:0 18px;}
+
+    header{
+      background:transparent;
+      padding:18px 0;
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(6px);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .brand{display:flex; gap:14px; align-items:center;}
+    .brand .logo{
+      width:56px; height:56px; border-radius:12px;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      display:flex; align-items:center; justify-content:center; color:white; font-weight:700;
+      font-family: "Poppins", sans-serif;
+      box-shadow:0 6px 18px rgba(2,36,99,0.12);
+    }
+    .brand h1{font-size:18px; margin:0}
+    .brand p{margin:0; font-size:13px; color:#555}
+
+    nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0; align-items:center;}
+    nav a{font-weight:500; color:var(--dark)}
+
+    .cta{display:flex; gap:10px; align-items:center;}
+    .btn{display:inline; padding:5px 8px; border-radius:10px; font-weight:600; cursor:pointer;}
+    .btn-primary{background:var(--primary); color:white; box-shadow:0 8px 22px rgba(2,36,99,0.12)}
+    .btn-outline{background:transparent; border:1px solid #e6e9ef; color:var(--dark)}
+
+    /* ====== Hero ====== */
+    .hero{
+      display:grid; grid-template-columns:1fr 460px; gap:36px; align-items:center;
+      padding:48px 0 36px;
+    }
+    .hero .eyebrow{display:inline-block; background:var(--accent); color:white; padding:6px 10px; border-radius:8px; font-weight:600; font-size:13px}
+    .hero h2{font-family:"Poppins",sans-serif; font-size:34px; margin:12px 0 12px; color:var(--dark)}
+    .hero p.lead{color:#4b5563; margin:0 0 18px}
+    .hero .stats{display:flex; gap:12px; margin:18px 0 0}
+    .stat{background:white; padding:12px 14px; border-radius:12px; box-shadow:0 6px 20px rgba(19,24,34,0.04); min-width:120px; text-align:center}
+    .stat strong{display:block; font-size:18px; color:var(--primary)}
+    .hero-figure{background:linear-gradient(180deg, #ffffff, #f7fbff); padding:18px; border-radius:14px; box-shadow:0 10px 30px rgba(2,36,99,0.06);}
+
+    /* ====== Sections ====== */
+    section{padding:36px 0}
+    .section-title{display:flex; align-items:end; gap:14px; margin-bottom:18px}
+    .section-title h3{margin:0; font-family:"Poppins"; color:var(--dark)}
+    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+
+    .card{background:white; padding:16px; border-radius:12px; box-shadow:0 10px 28px rgba(18,24,40,0.04)}
+    .card h4{margin:4px 0 8px; font-size:16px}
+    .card p{margin:0; color:#535b63; font-size:14px}
+
+    /* Courses */
+    .course-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+    .course{border-radius:12px; overflow:hidden; background:linear-gradient(180deg,#ffffff,#fbfdff); border:1px solid #eaf2ff;}
+    .course .body{padding:14px}
+    .pill{display:inline-block; padding:6px 8px; border-radius:999px; font-size:13px; background:#eef6ff; color:var(--primary); margin-bottom:8px;}
+
+    /* About */
+    .about{display:grid; grid-template-columns:1fr 360px; gap:26px; align-items:center}
+    .about .features{display:grid; gap:12px}
+    .feature{display:flex; gap:12px; align-items:center}
+    .icon{width:48px; height:48px; background:var(--muted); border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--primary)}
+
+    /* Testimonials */
+    .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .testi{padding:16px; background:white; border-radius:12px; box-shadow:0 8px 24px rgba(2,36,99,0.04)}
+
+    /* Admission / Form */
+    .split{display:grid; grid-template-columns:1fr 420px; gap:18px; align-items:start}
+    form{background:white; padding:18px; border-radius:12px; box-shadow:0 10px 30px rgba(2,36,99,0.06)}
+    form .row{display:flex; gap:8px}
+    input, select, textarea{width:100%; padding:10px 12px; border-radius:8px; border:1px solid #e6e9ef; font-size:14px; font-family:inherit}
+    textarea{min-height:120px; resize:vertical}
+    .muted{color:#6b7280; font-size:14px}
+
+    /* Contact */
+    .contact-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    .small{font-size:13px; color:#6b7280}
+
+    /* Footer */
+    footer{padding:28px 0; border-top:1px solid #eef2f6; margin-top:18px}
+    footer .fcols{display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px}
+    .socials{display:flex; gap:8px; margin-top:8px}
+    .badge{display:inline-block; padding:6px 10px; border-radius:8px; background:var(--primary); color:white; font-weight:600}
+
+    /* ====== Responsive ====== */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .hero-figure{order:2}
+      .about{grid-template-columns:1fr; text-align:left}
+      .split{grid-template-columns:1fr}
+      .cards, .course-grid, .testi-grid{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+    }
+    @media (max-width:640px){
+      .cards, .course-grid, .testi-grid{grid-template-columns:1fr}
+      .wrap{padding:0 14px}
+      .brand h1{font-size:16px}
+    }
+
+    /* ====== Tiny utilities ====== */
+    .muted-2{color:#7b838b}
+    .center{display:flex; align-items:center; justify-content:center}
+    .gap{height:12px}

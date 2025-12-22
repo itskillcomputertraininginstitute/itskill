@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="bn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="card">
+        <form id="regForm" action="#" novalidate>
+            <h2>রেজিস্ট্রেশন ফর্ম</h2>
+
+            <label>
+                পূর্ণ নাম
+                
+                <input type="text" name="fullname" required minlength="2" /> 
+                <br />
+                <br />
+            </label>
+
+            <label>
+                ব্যবহারকারীর নাম
+                <input type="text" name="username" />
+                <br />
+                <br />
+            </label>
+
+            <label>
+                ইমেইল
+                <input type="email" name="email" required />
+                <br />
+                <br />
+            </label>
+
+            <label>
+                ফোন
+                <input type="tel" name="phone" pattern="[0-9]{10,15}" placeholder="১০-১৫ ডিজিট" />
+                <br />
+                <br />
+            </label>
+
+            <label>
+                পাসওয়ার্ড
+                <input type="password" id="password" name="password" required minlength="6" />
+                <br />
+                <br />
+            </label>
+
+            <label>
+                পাসওয়ার্ড নিশ্চিত করুন
+                <input type="password" id="confirm_password" required />
+                <br />
+                <br />
+            </label>
+            <p id="pw-error" class="error" aria-live="polite"></p>
+
+            <label>
+                জন্ম তারিখ
+                <input type="date" name="dob" />
+                <br />
+                <br />
+            </label>
+
+            <label>
+                ঠিকানা
+                <textarea name="address" rows="3"></textarea>
+                <br />
+                <br />
+            </label>
+
+            <button type="submit">রেজিস্টার</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('regForm');
+        const pw = document.getElementById('password');
+        const cpw = document.getElementById('confirm_password');
+        const err = document.getElementById('pw-error');
+
+        function checkPasswords() {
+            if (cpw.value && pw.value !== cpw.value) {
+                err.textContent = 'পাসওয়ার্ড মিলছে না';
+                return false;
+            }
+            err.textContent = '';
+            return true;
+        }
+
+        cpw.addEventListener('input', checkPasswords);
+        pw.addEventListener('input', checkPasswords);
+
+        form.addEventListener('submit', function (e) {
+            if (!checkPasswords()) {
+                e.preventDefault();
+                cpw.focus();
+                return;
+            }
+            // এখানে AJAX/ফর্ম সাবমিশন যুক্ত করতে পারেন
+            e.preventDefault();
+            alert('ফর্ম সাবমিট সফল (ডেমো)');
+        });
+    </script>
+</body>
+</html>
