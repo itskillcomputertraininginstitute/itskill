@@ -163,15 +163,11 @@
 
  .hero p.lead {
    color: #4b5563;
-   margin: 0 0 18px
-   
+   margin: 0 0 18px 18px;
  }
  
  .lead{
   text-align: justify;
- margin-right: 25px;
- margin-left: 25px;
-
  }
 
  .hero .stats {
